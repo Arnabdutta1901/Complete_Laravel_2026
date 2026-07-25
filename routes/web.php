@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 // Home Route
 
-Route::view('/home', 'home');
+// Route::view('/home', 'home');
 
 // About Route With Data Passing
 Route::get('/about/{name}',function($name){
@@ -26,4 +26,8 @@ Route::get('abuser/{name}',[UserController::class,'aboutUser']);
 Route::get('getUserName/{name}',[UserController::class,'getUserName']);
 Route::get('admin',[UserController::class,'adminLogin']);
 Route::get('user-about',[UserController::class,'abouth']);
-Route::get('new',[UserController::class,'getUserHome']);
+Route::get('home',[UserController::class,'getUserHome']);
+
+// User From passing using laravel
+Route::view('user-form','user-form');
+Route::post('addUser',[UserController::class,'addUser']);

@@ -47,4 +47,15 @@ class UserController extends Controller
         $users=['Arnab','Dutta','Raj'];
         return view('home', ['name' => $name,'users'=>$users]);
     }
+
+
+    // ============User Form Requset Passing=======//
+    function addUser(Request $request)
+    {
+        echo "User name is:".$request->name;
+        echo "<br>";
+        echo "User password  is:".$request->password;
+        echo "<br>";
+        echo "User email is:".$request->email;
+    }
 }
