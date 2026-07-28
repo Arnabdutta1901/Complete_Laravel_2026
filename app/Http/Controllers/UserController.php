@@ -52,10 +52,30 @@ class UserController extends Controller
     // ============User Form Requset Passing=======//
     function addUser(Request $request)
     {
-        echo "User name is:".$request->name;
+        // echo "User name is:".$request->name;
+        // echo "<br>";
+        // echo "User password  is:".$request->password;
+        // echo "<br>";
+        // echo "User email is:".$request->email;
+        // Validation
+        $request->validate([
+            'name'=>'required|min:5|max:10',
+            'password'=>'required|min:8',
+            'email'=>'required|email',
+            'skill'=>'required'
+        ]);
+    }
+
+    // ============User Form  2Requset Passing=======//
+    function addUser2(Request $request)
+    {
+
+        echo "The city is:".$request->city;
         echo "<br>";
-        echo "User password  is:".$request->password;
+        echo "The gender is:".$request->gender;
         echo "<br>";
-        echo "User email is:".$request->email;
+        echo "The age is:".$request->age;
+        echo "<br>";
+        print_r($request->skill);
     }
 }
