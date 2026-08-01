@@ -4,15 +4,15 @@
      <form action="addUser" method="post">
         @csrf
        <div class="input-wrapper">
-        <input type="text" placeholder="Enter your name" name="name">
+        <input type="text" placeholder="Enter your name" name="name" value="{{old('name')}}" class="{{$errors->first('name')?'input-error':'' }}">
         <span style="color:red">@error('name'){{ $message }}@enderror</span>
        </div>
        <div class="input-wrapper">
-        <input type="text" placeholder="Enter your password" name="password">
+        <input type="text" placeholder="Enter your password" name="password" value="{{old('password')}}" class="{{$errors->first('password')?'input-error':'' }}" >
         <span style="color:red">@error('password'){{ $message }}@enderror</span>
        </div>
        <div class="input-wrapper">
-        <input type="text" placeholder="Enter your email" name="email">
+        <input type="text" placeholder="Enter your email" name="email" value="{{old('email')}}" class="{{$errors->first('email')?'input-error':''}}">
          <span style="color:red">@error('email'){{ $message }}@enderror</span>
        </div>
         <div class="input-wrapper">
@@ -48,5 +48,10 @@ button{
     width:200px;
     height:36px;
     cursor:pointer;
+}
+.input-error
+{
+    border:1px solid red;
+    color:red;
 }
 </style>

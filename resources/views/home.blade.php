@@ -1,17 +1,26 @@
-<h1>Hey,this is your home page</h1>
+<h3>
+   Current Url:{{ URL::current() }}
+   Full Url:{{ URL::full() }}
 
-<h1>Welcome:{{$name}}</h1>
+</h3>
 
-@if($name=="Arnab")
+
+
+
+{{-- <h1>Hey,this is your home page</h1>
+
+<h1>Welcome:{{$name}}</h1> --}}
+
+{{-- @if($name=="Arnab")
 <h2>Hey this is:{{ $name }}</h2>
 @elseif($name=="Sam")
 <h2>Hey this is:{{ $name }}</h2>
 @else
 <h2>Other Users</h2>
-@endif
+@endif --}}
 
 {{-- Foreach Loop --}}
-<div>
+{{-- <div>
 @foreach ($users as $user)
     <h1>The user name is:{{ $user }}</h1>
 @endforeach
@@ -24,11 +33,11 @@
 @includeIf('common.inner')
 
 {{-- Using Component Here --}}
-<x-message-banner  msg="You Login suceessfully:" class="suceess"/>
+{{-- <x-message-banner  msg="You Login suceessfully:" class="suceess"/>
 
-<x-message-banner  msg="You Signup suceessfully:" class="suceess"/>
+<x-message-banner  msg="You Signup suceessfully:" class="suceess"/> --}}
 
-<style>
+{{-- <style>
     .suceess{
        color:green;
        background-color:lightseagreen;
@@ -36,4 +45,4 @@
        padding:3px 10px;
        margin:10px;
     }
-</style>
+</style>  --}}
