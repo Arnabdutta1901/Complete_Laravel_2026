@@ -60,3 +60,11 @@ Route::prefix('student')->group(function(){
       Route::get('/update',[StudentController::class,'update']);
 
 });
+
+// ====Route Group With Controller======//
+Route::controller(StudentController::class)->group(function(){
+    Route::get('show','show');
+    Route::get('add','add');
+    Route::get('delete','delete');
+    Route::get('about/{name}','about');
+});
